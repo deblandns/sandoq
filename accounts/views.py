@@ -13,7 +13,7 @@ class UserView(APIView):
         serializer = UserSerializers(instance=user)
         return Response(serializer.data , status=status.HTTP_200_OK)
 
-    def put(selfself , request):
+    def put(self , request):
         user = request.user
         serializer = UserSerializers(data=request.data , instance=user)
         if serializer.is_valid():
