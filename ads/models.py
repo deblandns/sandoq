@@ -1,11 +1,10 @@
 from django.db import models
 from django.conf import settings
 from django.utils.translation import gettext_lazy as _
-from django.utils.timezone import now
 
 
 class Ad(models.Model):
-    date_added = models.DateTimeField(_('date published'), default=now)
+    date_added = models.DateTimeField(_('date published'), auto_now_add=True)
     title = models.CharField(_('title'), max_length=150)
     caption = models.TextField(_('caption'))
     image = models.ImageField(_('image'), upload_to='images')
