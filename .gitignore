@@ -3,3 +3,13 @@
 venv
 /__pycache__/
 __pycache__
+venv
+__pycache__
+.__pycache__
+migrations
+.migrations
+*.db
+images
+.images
+.env
+*.sqlite3
