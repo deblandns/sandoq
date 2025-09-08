@@ -25,7 +25,7 @@ class AdListApiView(APIView , StandardResultsSetPagination):
             return [IsAuthenticated()]
         return [AllowAny()]
 
-    @extend_schema(
+    @extend_schema(operation_id="ads_list", 
         parameters=[
             OpenApiParameter(
                 name="q",
@@ -107,7 +107,7 @@ class AdDetailApiView(APIView):
     permission_classes = (IsAuthenticated, IsPublisherOrReadOnly)
     parser_classes = (MultiPartParser, )
 
-    @extend_schema(
+    @extend_schema(operation_id="ads_retrieve",
         parameters=[OpenApiParameter(
             name="id",
             type=OpenApiTypes.INT,
